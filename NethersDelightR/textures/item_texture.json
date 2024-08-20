@@ -69,6 +69,12 @@
         },
         "diamond_machete": {
             "textures": "textures/items/diamond_machete"
+        },
+        "warped_fungus_colony": {
+            "textures": "textures/blocks/warped_fungus_colony_stage3"
+        },
+        "crimson_fungus_colony": {
+            "textures": "textures/blocks/crimson_fungus_colony_stage3"
         }
     },
     "texture_name": "atlas.items"

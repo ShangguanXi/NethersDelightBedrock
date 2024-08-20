@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "nethersdelight:rich_soul_soil",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:custom_components": [
+                "nethersdelight:rich_soil"
+            ],
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.6
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 3
+            },
+            "minecraft:geometry": "geometry.block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "rich_soul_soil"
+                }
+            },
+            "tag:dirt": {},
+            "tag:rich_soil": {},
+            "tag:sand": {},
+            "tag:compost_activators": {}
+        }
+    }
+}
