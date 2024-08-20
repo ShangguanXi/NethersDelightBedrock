@@ -1,0 +1,25 @@
+{
+    "format_version": "1.20.20",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "nethersdelight:scatter_propelplant_cane_feature"
+        },
+        "places_feature": "nethersdelight:sequence_propelplant_cane_feature",
+        "iterations": 10,
+        "x": {
+            "distribution": "uniform",
+            "extent": [
+                0,
+                5
+            ]
+        },
+        "y": "query.above_top_solid(variable.worldx, variable.worldz)",
+        "z": {
+            "distribution": "uniform",
+            "extent": [
+                0,
+                5
+            ]
+        }
+    }
+}

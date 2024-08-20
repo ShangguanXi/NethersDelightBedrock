@@ -1,0 +1,16 @@
+{
+    "format_version": "1.17",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "nethersdelight:hoglin_sirloin"
+        },
+        "tags": [
+            "furnace",
+            "smoker",
+            "campfire",
+            "soul_campfire"
+        ],
+        "input": "nethersdelight:hoglin_loin",
+        "output": "nethersdelight:hoglin_sirloin"
+    }
+}

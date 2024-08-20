@@ -1,0 +1,123 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.hoglin_trophy",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "hoglin",
+					"pivot": [0, 8, 7.5],
+					"cubes": [
+						{
+							"origin": [-6, -3, 0],
+							"size": [12, 15, 5],
+							"pivot": [0, 9, 5.5],
+							"rotation": [-45, 0, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [12, 15]},
+								"east": {"uv": [0, 15], "uv_size": [15, 5]},
+								"south": {"uv": [12, 0], "uv_size": [12, 15]},
+								"west": {"uv": [0, 20], "uv_size": [15, 5]},
+								"up": {"uv": [12, 30], "uv_size": [-12, -5]},
+								"down": {"uv": [24, 30], "uv_size": [-12, -5]}
+							}
+						},
+						{
+							"origin": [6.64911, 7.73673, 1],
+							"size": [1, 5, 4],
+							"pivot": [7.14911, 10.23673, 2],
+							"rotation": [0, 0, -22.5],
+							"uv": {
+								"north": {"uv": [23, 15], "uv_size": [1, 5]},
+								"east": {"uv": [19, 15], "uv_size": [4, 5]},
+								"south": {"uv": [24, 15], "uv_size": [1, 5]},
+								"west": {"uv": [15, 15], "uv_size": [4, 5]},
+								"up": {"uv": [25, 24], "uv_size": [-1, -4]},
+								"down": {"uv": [24, 24], "uv_size": [-1, -4]}
+							}
+						},
+						{
+							"origin": [-7.27475, 8.09222, 1],
+							"size": [1, 5, 4],
+							"pivot": [-7.8509, 11.2367, 2],
+							"rotation": [0, 0, 22.5],
+							"uv": {
+								"north": {"uv": [25, 15], "uv_size": [1, 5]},
+								"east": {"uv": [19, 20], "uv_size": [4, 5]},
+								"south": {"uv": [26, 15], "uv_size": [1, 5]},
+								"west": {"uv": [15, 20], "uv_size": [4, 5]},
+								"up": {"uv": [27, 24], "uv_size": [-1, -4]},
+								"down": {"uv": [26, 24], "uv_size": [-1, -4]}
+							}
+						},
+						{
+							"origin": [-7, 5, 5],
+							"size": [14, 7, 2],
+							"uv": {
+								"north": {"uv": [24, 0], "uv_size": [7, 14]},
+								"east": {"uv": [24, 0], "uv_size": [7, 2]},
+								"south": {"uv": [24, 0], "uv_size": [7, 14]},
+								"west": {"uv": [24, 12], "uv_size": [7, 2]},
+								"up": {"uv": [31, 14], "uv_size": [-2, -14]},
+								"down": {"uv": [25, 14], "uv_size": [-1, -14]}
+							}
+						},
+						{
+							"origin": [5, 4, -2],
+							"size": [2, 11, 2],
+							"pivot": [7, 4, -2],
+							"rotation": [45, 0, 0],
+							"uv": {
+								"north": {"uv": [29, 15], "uv_size": [2, 11]},
+								"east": {"uv": [27, 15], "uv_size": [2, 11]},
+								"south": {"uv": [29, 15], "uv_size": [2, 11]},
+								"west": {"uv": [27, 15], "uv_size": [2, 11]},
+								"up": {"uv": [31, 28], "uv_size": [-2, -2]},
+								"down": {"uv": [29, 28], "uv_size": [-2, -2]}
+							}
+						},
+						{
+							"origin": [-7, 4, -2],
+							"size": [2, 11, 2],
+							"pivot": [7, 4, -2],
+							"rotation": [45, 0, 0],
+							"uv": {
+								"north": {"uv": [29, 15], "uv_size": [2, 11]},
+								"east": {"uv": [27, 15], "uv_size": [2, 11]},
+								"south": {"uv": [29, 15], "uv_size": [2, 11]},
+								"west": {"uv": [27, 15], "uv_size": [2, 11]},
+								"up": {"uv": [31, 28], "uv_size": [-2, -2]},
+								"down": {"uv": [29, 28], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{
+							"origin": [-8, 0, 7],
+							"size": [16, 16, 1],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [32, 32],"material_instance": "trophy_mounting"},
+								"east": {"uv": [0, 0], "uv_size": [2, 32],"material_instance": "trophy_mounting"},
+								"south": {"uv": [0, 0], "uv_size": [32, 32],"material_instance": "trophy_mounting_back"},
+								"west": {"uv": [0, 0], "uv_size": [2, 32],"material_instance": "trophy_mounting"},
+								"up": {"uv": [32, 2], "uv_size": [-32, -2],"material_instance": "trophy_mounting"},
+								"down": {"uv": [32, 2], "uv_size": [-32, -2],"material_instance": "trophy_mounting"}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

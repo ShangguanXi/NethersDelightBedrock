@@ -1,0 +1,26 @@
+{
+    "format_version": "1.20.20",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "nethersdelight:propelplant_cane_anchor_feature"
+        },
+        "places_block": "minecraft:bedrock",
+        "enforce_survivability_rules": true,
+        "enforce_placement_rules": false,
+        "may_attach_to": {
+            "bottom": [
+                {
+                    "name": "minecraft:crimson_nylium"
+                }
+            ],
+            "top": [
+                {
+                    "name": "minecraft:air"
+                }
+            ]
+        },
+        "may_replace": [
+            "minecraft:air"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:weighted_random_feature": {
+      "description": {
+        "identifier": "nethersdelight:weighted_random_propelplant_cane_feature"
+      },
+      "features": [
+        [ "nethersdelight:propelplant_cane_1_feature", 1 ],
+        [ "nethersdelight:propelplant_cane_2_feature", 1 ],
+        [ "nethersdelight:propelplant_cane_3_feature", 1 ]
+      ]
+    }
+  }

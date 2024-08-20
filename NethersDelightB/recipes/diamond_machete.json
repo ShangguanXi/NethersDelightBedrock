@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "nethersdelight:diamond_machete"
+        },
+        "key": {
+            "m": {
+                "item": "minecraft:diamond"
+            },
+            "s": {
+                "item": "minecraft:stick"
+            }
+        },
+        "pattern": [
+            "  m",
+            " m ",
+            "s  "
+        ],
+        "result": {
+            "item": "nethersdelight:diamond_machete"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

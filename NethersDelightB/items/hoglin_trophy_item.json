@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "components": {
+      "minecraft:block_placer": {
+        "block": "nethersdelight:hoglin_trophy",
+        "use_block_description": true
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "hoglin_trophy"
+        }
+      }
+    },
+    "description": {
+      "identifier": "nethersdelight:hoglin_trophy",
+      "menu_category": {
+        "category": "items",
+        "group": "itemGroup.name.items"
+      }
+    }
+  }
+}

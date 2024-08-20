@@ -1,0 +1,48 @@
+{
+    "format_version": "1.20.20",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "nethersdelight:propelplant_cane_feature_rules",
+            "places_feature": "nethersdelight:scatter_propelplant_cane_feature"
+        },
+        "conditions": {
+            "placement_pass": "surface_pass",
+            "minecraft:biome_filter": [
+                {
+                    "all_of": [
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "nether"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "crimson_forest"
+                        }
+                    ]
+                }
+            ]
+        },
+        "distribution": {
+            "iterations": 1,
+            "scatter_chance": 30,
+            "coordinate_eval_order": "xzy",
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            },
+            "y": 0,
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            }
+        }
+    }
+}

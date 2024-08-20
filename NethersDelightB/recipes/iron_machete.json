@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "nethersdelight:iron_machete"
+        },
+        "key": {
+            "m": {
+                "item": "minecraft:iron_ingot"
+            },
+            "s": {
+                "item": "minecraft:stick"
+            }
+        },
+        "pattern": [
+            "  m",
+            " m ",
+            "s  "
+        ],
+        "result": {
+            "item": "nethersdelight:iron_machete"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

@@ -1,0 +1,153 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.stuffed_hoglin_foot6",
+				"texture_width": 96,
+				"texture_height": 48,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{
+							"origin": [7, 2, -8],
+							"size": [0, 7, 14],
+							"uv": {
+								"east": {"uv": [34.99998, 6.99999], "uv_size": [14.00004, 6.99999],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [-7, 2, -8],
+							"size": [0, 7, 14],
+							"uv": {
+								"east": {"uv": [34.99998, 6.99999], "uv_size": [14.00004, 6.99999],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [-7, 2, 5.9],
+							"size": [14, 7, 0.1],
+							"uv": {
+								"north": {"uv": [21, 7.00002], "uv_size": [13.99998, 6.99999],"material_instance": "inside_hoglin_block"},
+								"south": {"uv": [0, 19.00002], "uv_size": [14.00004, 6.99999]}
+							}
+						},
+						{
+							"origin": [-7, 9, -8],
+							"size": [14, 0, 14],
+							"uv": {
+								"up": {"uv": [42, 14.00001], "uv_size": [13.99998, 14.00001],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [-7, 6, -8],
+							"size": [14, 0, 14],
+							"uv": {
+								"up": {"uv": [28.00002, 14.00001], "uv_size": [13.99998, 14.00001],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [-6, 6, -8],
+							"size": [12, 2, 13],
+							"uv": {
+								"north": {"uv": [84, 48], "uv_size": [12, -2.00001],"material_instance": "inside_hoglin_block"},
+								"east": {"uv": [76.99998, 21], "uv_size": [13.00002, 2.00001],"material_instance": "inside_hoglin_block"},
+								"south": {"uv": [84, 19.00002], "uv_size": [12, 1.99998],"material_instance": "inside_hoglin_block"},
+								"west": {"uv": [76.99998, 21], "uv_size": [13.00002, 2.00001],"material_instance": "inside_hoglin_block"},
+								"up": {"uv": [96, 13.00002], "uv_size": [-12, -13.00002],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [-8, 2, -7],
+							"size": [6, 5.9, 14],
+							"uv": {
+								"north": {"uv": [0, 6.99999], "uv_size": [6, 6]},
+								"east": {"uv": [27, 24], "uv_size": [6, 14.00004], "uv_rotation": 90},
+								"south": {"uv": [6, 6.99999], "uv_size": [6, 6]},
+								"west": {"uv": [27, 38.00004], "uv_size": [6, -14.00004], "uv_rotation": 90},
+								"up": {"uv": [20.00004, 38.00001], "uv_size": [-6, -14.00001]},
+								"down": {"uv": [67.00002, 24], "uv_size": [-6, 14.00001]}
+							}
+						},
+						{
+							"origin": [2, 2, -7],
+							"size": [6, 5.9, 14],
+							"uv": {
+								"north": {"uv": [0, 6.99999], "uv_size": [6, 6]},
+								"east": {"uv": [27, 24], "uv_size": [6, 14.00004], "uv_rotation": 90},
+								"south": {"uv": [6, 6.99999], "uv_size": [6, 6]},
+								"west": {"uv": [13.99998, 38.00004], "uv_size": [6, -14.00004], "uv_rotation": 90},
+								"up": {"uv": [20.00004, 38.00001], "uv_size": [-6, -14.00001]},
+								"down": {"uv": [67.00002, 24], "uv_size": [-6, 14.00001]}
+							}
+						}
+					]
+				},
+				{
+					"name": "rost",
+					"parent": "body",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{
+							"origin": [0, 6, -8],
+							"size": [0, 6, 9],
+							"uv": {
+								"east": {"uv": [87, 24], "uv_size": [9, 6],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [4.92074, 8, -6.36292],
+							"size": [0, 6, 9],
+							"pivot": [-0.2706, 7.59672, -0.67158],
+							"rotation": [0, -45, 0],
+							"uv": {
+								"east": {"uv": [78, 24], "uv_size": [9, 6],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [0.92074, 8, 0.01976],
+							"size": [0, 6, 9],
+							"pivot": [-0.2706, 7.59672, -0.67158],
+							"rotation": [0, 45, 0],
+							"uv": {
+								"east": {"uv": [78, 24], "uv_size": [9, 6],"material_instance": "inside_hoglin_block"}
+							}
+						},
+						{
+							"origin": [-3.76359, 9.43662, -5],
+							"size": [0, 7, 4],
+							"pivot": [-0.2706, 7.59672, -0.67158],
+							"rotation": [0, 0, -22.5],
+							"uv": {
+								"east": {"uv": [81, 8.00001], "uv_size": [-4.00002, 6.99999],"material_instance": "inside_hoglin_block"}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 2, 16],
+							"uv": {
+								"north": {"uv": [48, 45], "uv_size": [48, 3],"material_instance": "stuffed_hoglin_tray"},
+								"east": {"uv": [90, 24], "uv_size": [6, 24], "uv_rotation": 90,"material_instance": "stuffed_hoglin_tray"},
+								"south": {"uv": [48, 45], "uv_size": [48, 3],"material_instance": "stuffed_hoglin_tray"},
+								"west": {"uv": [90, 0], "uv_size": [6, 24], "uv_rotation": 90,"material_instance": "stuffed_hoglin_tray"},
+								"up": {"uv": [48, 48], "uv_size": [-48, -24],"material_instance": "stuffed_hoglin_tray"},
+								"down": {"uv": [96, 24], "uv_size": [-48, -24],"material_instance": "stuffed_hoglin_tray"}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,75 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "warped_moldy_meat": {
+            "textures": "textures/items/warped_moldy_meat"
+        },
+        "stuffed_hoglin": {
+            "textures": "textures/items/stuffed_hoglin"
+        },
+        "strider_slice": {
+            "textures": "textures/items/strider_slice"
+        },
+        "strider_moss_stew": {
+            "textures": "textures/items/strider_moss_stew"
+        },
+        "roasted_hoglin_ears": {
+            "textures": "textures/items/roasted_hoglin_ears"
+        },
+        "raw_stuffed_hoglin": {
+            "textures": "textures/items/raw_stuffed_hoglin"
+        },
+        "propelplant_cane": {
+            "textures": "textures/items/propelplant_cane"
+        },
+        "propelpearl": {
+            "textures": "textures/items/propelpearl"
+        },
+        "plate_of_stuffed_hoglin_snout": {
+            "textures": "textures/items/plate_of_stuffed_hoglin_snout"
+        },
+        "plate_of_stuffed_hoglin_roast": {
+            "textures": "textures/items/plate_of_stuffed_hoglin_roast"
+        },
+        "plate_of_stuffed_hoglin_ham": {
+            "textures": "textures/items/plate_of_stuffed_hoglin_ham"
+        },
+        "nether_skewer": {
+            "textures": "textures/items/nether_skewer"
+        },
+        "netherite_machete": {
+            "textures": "textures/items/netherite_machete"
+        },
+        "magma_gelatin": {
+            "textures": "textures/items/magma_gelatin"
+        },
+        "iron_machete": {
+            "textures": "textures/items/iron_machete"
+        },
+        "hoglin_trophy": {
+            "textures": "textures/items/hoglin_trophy"
+        },
+        "hoglin_sirloin": {
+            "textures": "textures/items/hoglin_sirloin"
+        },
+        "hoglin_loin": {
+            "textures": "textures/items/hoglin_loin"
+        },
+        "hoglin_hide": {
+            "textures": "textures/items/hoglin_hide"
+        },
+        "ground_strider": {
+            "textures": "textures/items/ground_strider"
+        },
+        "grilled_strider": {
+            "textures": "textures/items/grilled_strider"
+        },
+        "golden_machete": {
+            "textures": "textures/items/golden_machete"
+        },
+        "diamond_machete": {
+            "textures": "textures/items/diamond_machete"
+        }
+    },
+    "texture_name": "atlas.items"
+}

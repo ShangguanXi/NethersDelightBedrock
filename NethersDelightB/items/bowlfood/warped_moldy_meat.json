@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "components": {
+      "minecraft:food": {
+        "can_always_eat": false,
+        "nutrition": 8.5,
+        "saturation_modifier": 0.8470588235294118,
+        "using_converts_to": "minecraft:bowl"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "warped_moldy_meat"
+        }
+      },
+      "minecraft:max_stack_size": 16,
+      "minecraft:use_animation": "eat",
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6
+      }
+    },
+    "description": {
+      "identifier": "nethersdelight:warped_moldy_meat",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.miscFood"
+      }
+    }
+  }
+}

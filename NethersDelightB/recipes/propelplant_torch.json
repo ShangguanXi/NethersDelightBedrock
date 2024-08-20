@@ -1,0 +1,26 @@
+/*{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "nethersdelight:propelplant_torch"
+        },
+        "key": {
+            "c": {
+                "item": "nethersdelight:propelplant_cane"
+            },
+            "p": {
+                "item": "nethersdelight:propelpearl"
+            }
+        },
+        "pattern": [
+            "p",
+            "c"
+        ],
+        "result": {
+            "item": "nethersdelight:propelplant_torch"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}*/

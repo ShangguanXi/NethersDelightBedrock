@@ -1,0 +1,29 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "nethersdelight:nether_skewer"
+        },
+        "key": {
+            "b": {
+                "item": "minecraft:blaze_rod"
+            },
+            "p": {
+                "item": "nethersdelight:propelpearl"
+            },
+            "s": {
+                "tag": "nethersdelight:raw_strider"
+            }
+        },
+        "pattern": [
+            "ps",
+            "b "
+        ],
+        "result": {
+            "item": "nethersdelight:nether_skewer"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

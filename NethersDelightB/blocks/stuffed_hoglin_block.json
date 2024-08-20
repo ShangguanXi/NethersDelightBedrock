@@ -1,0 +1,412 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "nethersdelight:stuffed_hoglin",
+            "menu_category": {
+                "category": "none"
+            },
+            "states": {
+                "nethersdelight:servings": {
+                    "values": {
+                        "min": 0,
+                        "max": 11
+                    }
+                },
+                "nethersdelight:part": [
+                    "head",
+                    "foot"
+                ]
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 0&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head11"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 1&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head10"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 2&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head9"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 3&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head8"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 4&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head7"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 5&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head6"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 6&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head5"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 7&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head4"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 8&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head3"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 9&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head2"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 10&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_head1"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 11&&query.block_state('nethersdelight:part') == 'head'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_tray_head"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 0&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot11"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 1&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot10"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 2&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot9"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 3&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot8"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 4&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot7"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 5&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot6"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 6&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot5"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 7&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot4"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 8&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot3"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 9&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot2"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 10&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_foot1"
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:servings') == 11&&query.block_state('nethersdelight:part') == 'foot'",
+                "components": {
+                    "minecraft:geometry": "geometry.stuffed_hoglin_tray_foot"
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            270,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'foot'&&query.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "north"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'head'&&query.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "south"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'foot'&&query.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "south"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'head'&&query.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "north"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'foot'&&query.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "west"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'head'&&query.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "east"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'foot'&&query.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "east"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:part') == 'head'&&query.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:placement_filter": {
+                        "conditions": [
+                            {
+                                "block_filter": [
+                                    "nethersdelight:stuffed_hoglin"
+                                ],
+                                "allowed_faces": [
+                                    "west"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:geometry": "geometry.stuffed_hoglin_head1",
+            "minecraft:custom_components": [
+                "nethersdelight:stuffed_hoglin"
+            ],
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.25
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.25
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "stuffed_hoglin_block",
+                    "render_method": "alpha_test"
+                },
+                "inside_hoglin_block": {
+                    "texture": "inside_hoglin_block",
+                    "render_method": "alpha_test"
+                },
+                "stuffed_hoglin_tray": {
+                    "texture": "stuffed_hoglin_tray",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -8.0,
+                    0.0,
+                    -8.0
+                ],
+                "size": [
+                    16.0,
+                    10.0,
+                    16.0
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8.0,
+                    0.0,
+                    -8.0
+                ],
+                "size": [
+                    16.0,
+                    10.0,
+                    16.0
+                ]
+            },
+            "minecraft:loot": "loot_tables/nethersdelight/empty.json"
+        }
+    }
+}

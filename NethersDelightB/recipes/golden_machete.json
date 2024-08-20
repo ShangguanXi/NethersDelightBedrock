@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "nethersdelight:golden_machete"
+        },
+        "key": {
+            "m": {
+                "item": "minecraft:gold_ingot"
+            },
+            "s": {
+                "item": "minecraft:stick"
+            }
+        },
+        "pattern": [
+            "  m",
+            " m ",
+            "s  "
+        ],
+        "result": {
+            "item": "nethersdelight:golden_machete"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

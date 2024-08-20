@@ -1,0 +1,12 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "nethersdelight:sequence_propelplant_cane_feature"
+        },
+        "features": [
+            "nethersdelight:propelplant_cane_anchor_feature",
+            "nethersdelight:weighted_random_propelplant_cane_feature"
+        ]
+    }
+}

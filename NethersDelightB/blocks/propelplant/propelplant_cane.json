@@ -1,0 +1,129 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "nethersdelight:propelplant_cane",
+            "menu_category": {
+                "category": "none"
+            },
+            "states": {
+                "nethersdelight:berry": [
+                    false,
+                    true
+                ],
+                "nethersdelight:stage": [
+                    "berry_stem",
+                    "cane",
+                    "stem",
+                    "berry_cane"
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('nethersdelight:stage') == 'berry_stem'&&query.block_state('nethersdelight:berry') == false",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "propelplant_berry_stem",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:stage') == 'berry_stem'&&query.block_state('nethersdelight:berry') == true",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "propelplant_berry_stem_berry",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:stage') == 'cane'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "propelplant_cane",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:stage') == 'stem'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "propelplant_stem",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:stage') == 'berry_cane'&&query.block_state('nethersdelight:berry') == false",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "propelplant_berry_cane",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('nethersdelight:stage') == 'berry_cane'&&query.block_state('nethersdelight:berry') == true",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "propelplant_berry_cane_berry",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:tick": {
+                "interval_range": [
+                    1,
+                    1
+                ]
+            },
+            "minecraft:custom_components": [
+                "nethersdelight:propelplant_cane"
+            ],
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.1
+            },
+            "minecraft:geometry": "geometry.rice_crop_support",
+            "minecraft:flammable": {
+                "catch_chance_modifier": 30,
+                "destroy_chance_modifier": 60
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "block_filter": [
+                            "nethersdelight:propelplant_cane",
+                            "minecraft:crimson_nylium",
+                            "minecraft:warped_nylium"
+                        ],
+                        "allowed_faces": [
+                            "up"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:collision_box": false
+        }
+    }
+}

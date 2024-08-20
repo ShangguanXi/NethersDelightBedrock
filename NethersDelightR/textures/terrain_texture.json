@@ -1,0 +1,152 @@
+{
+  "num_mip_levels": 4,
+  "padding": 8,
+  "resource_pack_name": "vanilla",
+  "texture_data": {
+    "warped_fungus_colony_stage3": {
+      "textures": "textures/blocks/warped_fungus_colony_stage3"
+    },
+    "warped_fungus_colony_stage2": {
+      "textures": "textures/blocks/warped_fungus_colony_stage2"
+    },
+    "warped_fungus_colony_stage1": {
+      "textures": "textures/blocks/warped_fungus_colony_stage1"
+    },
+    "warped_fungus_colony_stage0": {
+      "textures": "textures/blocks/warped_fungus_colony_stage0"
+    },
+    "trophy_mounting_back": {
+      "textures": "textures/blocks/trophy_mounting_back"
+    },
+    "trophy_mounting": {
+      "textures": "textures/blocks/trophy_mounting"
+    },
+    "stuffed_hoglin_tray": {
+      "textures": "textures/blocks/stuffed_hoglin_tray"
+    },
+    "stuffed_hoglin_block": {
+      "textures": "textures/blocks/stuffed_hoglin_block"
+    },
+    "soul_compost_3": {
+      "textures": "textures/blocks/soul_compost_3"
+    },
+    "soul_compost_2": {
+      "textures": "textures/blocks/soul_compost_2"
+    },
+    "soul_compost_1": {
+      "textures": "textures/blocks/soul_compost_1"
+    },
+    "soul_compost_0": {
+      "textures": "textures/blocks/soul_compost_0"
+    },
+    "rich_soul_soil": {
+      "textures": "textures/blocks/rich_soul_soil"
+    },
+    "propelplant_torch": {
+      "textures": "textures/blocks/propelplant_torch"
+    },
+    "propelplant_stem": {
+      "textures": "textures/blocks/propelplant_stem"
+    },
+    "propelplant_cane": {
+      "textures": "textures/blocks/propelplant_cane"
+    },
+    "propelplant_berry_stem_berry": {
+      "textures": "textures/blocks/propelplant_berry_stem_berry"
+    },
+    "propelplant_berry_stem": {
+      "textures": "textures/blocks/propelplant_berry_stem"
+    },
+    "propelplant_berry_cane_berry": {
+      "textures": "textures/blocks/propelplant_berry_cane_berry"
+    },
+    "propelplant_berry_cane": {
+      "textures": "textures/blocks/propelplant_berry_cane"
+    },
+    "nether_brick_smoker_top": {
+      "textures": "textures/blocks/nether_brick_smoker_top"
+    },
+    "nether_brick_smoker_side": {
+      "textures": "textures/blocks/nether_brick_smoker_side"
+    },
+    "nether_brick_smoker_front_on": {
+      "textures": "textures/blocks/nether_brick_smoker_front_on"
+    },
+    "nether_brick_smoker_front": {
+      "textures": "textures/blocks/nether_brick_smoker_front"
+    },
+    "nether_brick_smoker_bottom": {
+      "textures": "textures/blocks/nether_brick_smoker_bottom"
+    },
+    "mimicarnation": {
+      "textures": "textures/blocks/mimicarnation"
+    },
+    "inside_hoglin_block": {
+      "textures": "textures/blocks/inside_hoglin_block"
+    },
+    "hoglin_trophy": {
+      "textures": "textures/blocks/hoglin_trophy"
+    },
+    "crimson_fungus_colony_stage3": {
+      "textures": "textures/blocks/crimson_fungus_colony_stage3"
+    },
+    "crimson_fungus_colony_stage2": {
+      "textures": "textures/blocks/crimson_fungus_colony_stage2"
+    },
+    "crimson_fungus_colony_stage1": {
+      "textures": "textures/blocks/crimson_fungus_colony_stage1"
+    },
+    "crimson_fungus_colony_stage0": {
+      "textures": "textures/blocks/crimson_fungus_colony_stage0"
+    },
+    "blackstone_stove_top_soul": {
+      "textures": "textures/blocks/blackstone_stove_top_soul"
+    },
+    "blackstone_stove_top_on": {
+      "textures": "textures/blocks/blackstone_stove_top_on"
+    },
+    "blackstone_stove_top": {
+      "textures": "textures/blocks/blackstone_stove_top"
+    },
+    "blackstone_stove_side": {
+      "textures": "textures/blocks/blackstone_stove_side"
+    },
+    "blackstone_stove_front_soul": {
+      "textures": "textures/blocks/blackstone_stove_front_soul"
+    },
+    "blackstone_stove_front_on": {
+      "textures": "textures/blocks/blackstone_stove_front_on"
+    },
+    "blackstone_stove_front": {
+      "textures": "textures/blocks/blackstone_stove_front"
+    },
+    "blackstone_stove_bottom": {
+      "textures": "textures/blocks/blackstone_stove_bottom"
+    },
+    "blackstone_furnace_top": {
+      "textures": "textures/blocks/blackstone_furnace_top"
+    },
+    "blackstone_furnace_side": {
+      "textures": "textures/blocks/blackstone_furnace_side"
+    },
+    "blackstone_furnace_front_on": {
+      "textures": "textures/blocks/blackstone_furnace_front_on"
+    },
+    "blackstone_furnace_front": {
+      "textures": "textures/blocks/blackstone_furnace_front"
+    },
+    "blackstone_blast_furnace_top": {
+      "textures": "textures/blocks/blackstone_blast_furnace_top"
+    },
+    "blackstone_blast_furnace_side": {
+      "textures": "textures/blocks/blackstone_blast_furnace_side"
+    },
+    "blackstone_blast_furnace_front_on": {
+      "textures": "textures/blocks/blackstone_blast_furnace_front_on"
+    },
+    "blackstone_blast_furnace_front": {
+      "textures": "textures/blocks/blackstone_blast_furnace_front"
+    }
+  },
+  "texture_name": "atlas.terrain"
+}

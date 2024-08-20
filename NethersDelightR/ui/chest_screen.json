@@ -1,0 +1,330 @@
+{
+  "raw_strider": {
+    "type": "image",
+    "texture": "textures/gui/raw_strider",
+    "uv": "@raw_stridert_anim",
+    "uv_size": [
+      16,
+      16
+    ],
+    "disable_anim_fast_forward": true
+  },
+  "raw_stridert_anim": {
+    "anim_type": "flip_book",
+    "initial_uv": [
+      0,
+      0
+    ],
+    "frame_count": 2,
+    "frame_step": 16,
+    "fps": 1,
+    "reversible": true,
+    "easing": "linear"
+  },
+  "nethersdelight_recipe_part_0": {
+    "type": "panel",
+    "size": [
+      150,
+      38
+    ],
+    "controls": [
+      {
+        "stuffed_hoglin@chest.cooking_pot_recipe": {
+          "texture": "textures/gui/recipe/cooking_recipe",
+          "offset": [
+            37.5,
+            0
+          ],
+          "size": [
+            75,
+            38
+          ],
+          "controls": [
+            {
+              "cooking_pot_recipe_cell@chest.cooking_pot_recipe_cell": {
+                "$cell0": "textures/items/nether_salad",
+                "$cell1": "textures/items/raw_stuffed_hoglin",
+                "$cell2": "textures/items/nether_salad",
+                "$result": "textures/items/stuffed_hoglin"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "magma_gelatin@chest.cooking_pot_recipe": {
+          "texture": "textures/gui/recipe/cooking_recipe",
+          "offset": [
+            -37.5,
+            0
+          ],
+          "size": [
+            75,
+            38
+          ],
+          "controls": [
+            {
+              "cooking_pot_recipe_cell@chest.cooking_pot_recipe_cell": {
+                "$cell0": "textures/items/magma_cream",
+                "$cell1": "textures/items/magma_cream",
+                "$cell2": "textures/items/magma_cream",
+                "$cell3": "textures/items/propelpearl",
+                "$container": "textures/items/bucket_lava",
+                "$result": "textures/items/magma_gelatin"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "nethersdelight_recipe_grid_0": {
+    "type": "grid",
+    "size": [
+      150,
+      38
+    ],
+    "grid_dimensions": [
+      1,
+      1
+    ],
+    "grid_item_template": "chest.nethersdelight_recipe_part_0"
+  },
+  "nethersdelight_recipe_part_1": {
+    "type": "panel",
+    "size": [
+      150,
+      38
+    ],
+    "controls": [
+      {
+        "grilled_strider@chest.cooking_pot_recipe": {
+          "texture": "textures/gui/recipe/cooking_recipe",
+          "offset": [
+            37.5,
+            0
+          ],
+          "size": [
+            75,
+            38
+          ],
+          "controls": [
+            {
+              "cooking_pot_recipe_cell@chest.cooking_pot_recipe_cell": {
+                "controls": [
+                  {
+                    "cell0@chest.raw_strider": {
+                      "offset": [
+                        -23,
+                        -7
+                      ],
+                      "size": [
+                        7.5,
+                        7.5
+                      ]
+                    }
+                  },
+                  {
+                    "cell4": {
+                      "type": "image",
+                      "offset": [
+                        -14.625,
+                        1.5
+                      ],
+                      "size": [
+                        7.5,
+                        7.5
+                      ],
+                      "texture": "textures/blocks/warped_fungus"
+                    }
+                  },
+                  {
+                    "cell1": {
+                      "type": "image",
+                      "offset": [
+                        -14.625,
+                        -7
+                      ],
+                      "size": [
+                        7.5,
+                        7.5
+                      ],
+                      "texture": "textures/blocks/crimson_fungus"
+                    }
+                  },
+                  {
+                    "cell2": {
+                      "type": "image",
+                      "offset": [
+                        -6.25,
+                        -7
+                      ],
+                      "size": [
+                        7.5,
+                        7.5
+                      ],
+                      "texture": "textures/blocks/warped_roots"
+                    }
+                  },
+                  {
+                    "cell3": {
+                      "type": "image",
+                      "offset": [
+                        -23,
+                        1.5
+                      ],
+                      "size": [
+                        7.5,
+                        7.5
+                      ],
+                      "texture": "textures/blocks/crimson_roots"
+                    }
+                  },
+                  {
+                    "result": {
+                      "type": "image",
+                      "offset": [
+                        21,
+                        -5.25
+                      ],
+                      "size": [
+                        7.5,
+                        7.5
+                      ],
+                      "texture": "textures/items/grilled_strider"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "strider_moss_stew@chest.cooking_pot_recipe": {
+          "texture": "textures/gui/recipe/cooking_recipe",
+          "offset": [
+            -37.5,
+            0
+          ],
+          "size": [
+            75,
+            38
+          ],
+          "controls": [
+            {
+              "cell0@chest.raw_strider": {
+                "offset": [
+                  -23,
+                  -7
+                ],
+                "size": [
+                  7.5,
+                  7.5
+                ]
+              }
+            },
+            {
+              "cell4": {
+                "type": "image",
+                "offset": [
+                  -14.625,
+                  1.5
+                ],
+                "size": [
+                  7.5,
+                  7.5
+                ],
+                "texture": "textures/blocks/crimson_fungus"
+              }
+            },
+            {
+              "cell1": {
+                "type": "image",
+                "offset": [
+                  -14.625,
+                  -7
+                ],
+                "size": [
+                  7.5,
+                  7.5
+                ],
+                "texture": "textures/blocks/crimson_roots"
+              }
+            },
+            {
+              "cell2": {
+                "type": "image",
+                "offset": [
+                  -6.25,
+                  -7
+                ],
+                "size": [
+                  7.5,
+                  7.5
+                ],
+                "texture": "textures/blocks/warped_fungus"
+              }
+            },
+            {
+              "cell3": {
+                "type": "image",
+                "offset": [
+                  -23,
+                  1.5
+                ],
+                "size": [
+                  7.5,
+                  7.5
+                ],
+                "texture": "textures/blocks/warped_fungus"
+              }
+            },
+            {
+              "result": {
+                "type": "image",
+                "offset": [
+                  21,
+                  -5.25
+                ],
+                "size": [
+                  7.5,
+                  7.5
+                ],
+                "texture": "textures/items/strider_moss_stew"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "nethersdelight_recipe_grid_1": {
+    "type": "grid",
+    "size": [
+      150,
+      38
+    ],
+    "grid_dimensions": [
+      1,
+      1
+    ],
+    "grid_item_template": "chest.nethersdelight_recipe_part_1"
+  },
+  "recipe_grid_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "nethersdelight_recipe_grid_0@chest.nethersdelight_recipe_grid_0": {}
+          },
+          {
+            "nethersdelight_recipe_grid_1@chest.nethersdelight_recipe_grid_1": {}
+          }
+        ]
+      }
+    ]
+  }
+}
