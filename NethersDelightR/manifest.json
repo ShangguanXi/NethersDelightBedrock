@@ -5,35 +5,35 @@
             "version": [
                 2,
                 0,
-                0
+                1
             ]
         }
     ],
     "format_version": 2,
     "header": {
-        "description": "pack.name",
+        "description": "pack.description",
         "min_engine_version": [
             1,
             21,
             20
         ],
-        "name": "pack.description",
+        "name": "pack.name",
         "uuid": "8d100811-1f05-484c-a3f5-f25492923a61",
         "version": [
             2,
             0,
-            0
+            1
         ]
     },
     "modules": [
         {
-            "description": "pack.name",
+            "description": "pack.description",
             "type": "resources",
             "uuid": "38c87117-858b-44c8-8692-3115d7e6d832",
             "version": [
                 2,
                 0,
-                0
+                1
             ]
         }
     ]

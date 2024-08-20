@@ -5,7 +5,7 @@
             "version": [
                 2,
                 0,
-                0
+                1
             ]
         },
         {
@@ -15,29 +15,29 @@
     ],
     "format_version": 2,
     "header": {
-        "description": "pack.name",
+        "description": "pack.description",
         "min_engine_version": [
             1,
             21,
             20
         ],
-        "name": "pack.description",
+        "name": "pack.name",
         "uuid": "9e241746-306a-4b56-b704-c720cd8f84fc",
         "version": [
             2,
             0,
-            0
+            1
         ]
     },
     "modules": [
         {
-            "description": "pack.name",
+            "description": "pack.description",
             "type": "data",
             "uuid": "976d646e-8673-44ea-938e-a78a9813bc76",
             "version": [
                 2,
                 0,
-                0
+                1
             ]
         },
         {
@@ -49,7 +49,7 @@
             "version": [
                 2,
                 0,
-                0
+                1
             ]
         }
     ]
