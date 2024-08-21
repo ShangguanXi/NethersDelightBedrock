@@ -39,7 +39,11 @@ class PropelplantCaneComponent {
         const dimension = args.dimension;
         const arr = dimension.getEntitiesAtBlockLocation(block.location);
         if (arr.length > 0) {
-            dimension.createExplosion(block.location, 1);
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].typeId != "minecraft:item") {
+                    dimension.createExplosion(block.location, 1);
+                }
+            }
         }
     }
     onPlayerInteract(args) {
