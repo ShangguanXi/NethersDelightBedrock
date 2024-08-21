@@ -1,4 +1,4 @@
-/*{
+{
     "format_version": "1.12",
     "minecraft:recipe_shapeless": {
         "description": {
@@ -40,4 +40,4 @@
             "crafting_table"
         ]
     }
-}*/
+}
