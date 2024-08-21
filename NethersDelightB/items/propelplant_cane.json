@@ -20,7 +20,7 @@
       "identifier": "nethersdelight:propelplant_cane",
       "menu_category": {
         "category": "nature",
-        "group": "itemGroup.name.nature"
+        "group": "itemGroup.name.crop"
       }
     }
   }

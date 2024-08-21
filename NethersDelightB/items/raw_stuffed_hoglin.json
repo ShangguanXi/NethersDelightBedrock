@@ -11,8 +11,8 @@
     "description": {
       "identifier": "nethersdelight:raw_stuffed_hoglin",
       "menu_category": {
-        "category": "items",
-        "group": "itemGroup.name.items"
+        "category": "nature",
+        "group": "itemGroup.name.rawFood"
       }
     }
   }

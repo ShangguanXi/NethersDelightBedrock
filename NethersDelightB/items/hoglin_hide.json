@@ -17,7 +17,7 @@
       "identifier": "nethersdelight:hoglin_hide",
       "menu_category": {
         "category": "items",
-        "group": "itemGroup.name.items"
+        "group": "itemGroup.name.nethersdelight_items"
       }
     }
   }

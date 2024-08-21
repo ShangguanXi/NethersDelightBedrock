@@ -16,7 +16,7 @@
       "identifier": "nethersdelight:hoglin_trophy",
       "menu_category": {
         "category": "items",
-        "group": "itemGroup.name.items"
+        "group": "itemGroup.name.nethersdelight_items"
       }
     }
   }
