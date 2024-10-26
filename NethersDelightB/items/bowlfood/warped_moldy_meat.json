@@ -4,7 +4,7 @@
     "components": {
       "minecraft:food": {
         "can_always_eat": false,
-        "nutrition": 8.5,
+        "nutrition": 9,
         "saturation_modifier": 0.8470588235294118,
         "using_converts_to": "minecraft:bowl"
       },
