@@ -29,7 +29,7 @@
     ],
     "controls": [
       {
-        "stuffed_hoglin@chest.cooking_pot_recipe": {
+        "stuffed_hoglin@cooking_pot.cooking_pot_recipe": {
           "texture": "textures/gui/recipe/cooking_recipe",
           "offset": [
             37.5,
@@ -41,7 +41,7 @@
           ],
           "controls": [
             {
-              "cooking_pot_recipe_cell@chest.cooking_pot_recipe_cell": {
+              "cooking_pot_recipe_cell@cooking_pot.cooking_pot_recipe_cell": {
                 "$cell0": "textures/items/nether_salad",
                 "$cell1": "textures/items/raw_stuffed_hoglin",
                 "$cell2": "textures/items/nether_salad",
@@ -52,7 +52,7 @@
         }
       },
       {
-        "magma_gelatin@chest.cooking_pot_recipe": {
+        "magma_gelatin@cooking_pot.cooking_pot_recipe": {
           "texture": "textures/gui/recipe/cooking_recipe",
           "offset": [
             -37.5,
@@ -64,7 +64,7 @@
           ],
           "controls": [
             {
-              "cooking_pot_recipe_cell@chest.cooking_pot_recipe_cell": {
+              "cooking_pot_recipe_cell@cooking_pot.cooking_pot_recipe_cell": {
                 "$cell0": "textures/items/magma_cream",
                 "$cell1": "textures/items/magma_cream",
                 "$cell2": "textures/items/magma_cream",
@@ -88,7 +88,7 @@
       1,
       1
     ],
-    "grid_item_template": "chest.nethersdelight_recipe_part_0"
+    "grid_item_template": "cooking_pot.nethersdelight_recipe_part_0"
   },
   "nethersdelight_recipe_part_1": {
     "type": "panel",
@@ -98,7 +98,7 @@
     ],
     "controls": [
       {
-        "grilled_strider@chest.cooking_pot_recipe": {
+        "grilled_strider@cooking_pot.cooking_pot_recipe": {
           "texture": "textures/gui/recipe/cooking_recipe",
           "offset": [
             37.5,
@@ -110,10 +110,10 @@
           ],
           "controls": [
             {
-              "cooking_pot_recipe_cell@chest.cooking_pot_recipe_cell": {
+              "cooking_pot_recipe_cell@cooking_pot.cooking_pot_recipe_cell": {
                 "controls": [
                   {
-                    "cell0@chest.raw_strider": {
+                    "cell0@cooking_pot.raw_strider": {
                       "offset": [
                         -23,
                         -7
@@ -201,7 +201,7 @@
         }
       },
       {
-        "strider_moss_stew@chest.cooking_pot_recipe": {
+        "strider_moss_stew@cooking_pot.cooking_pot_recipe": {
           "texture": "textures/gui/recipe/cooking_recipe",
           "offset": [
             -37.5,
@@ -213,7 +213,7 @@
           ],
           "controls": [
             {
-              "cell0@chest.raw_strider": {
+              "cell0@cooking_pot.raw_strider": {
                 "offset": [
                   -23,
                   -7
@@ -309,7 +309,7 @@
       1,
       1
     ],
-    "grid_item_template": "chest.nethersdelight_recipe_part_1"
+    "grid_item_template": "cooking_pot.nethersdelight_recipe_part_1"
   },
   "recipe_grid_panel": {
     "modifications": [
@@ -318,10 +318,10 @@
         "operation": "insert_back",
         "value": [
           {
-            "nethersdelight_recipe_grid_0@chest.nethersdelight_recipe_grid_0": {}
+            "nethersdelight_recipe_grid_0@cooking_pot.nethersdelight_recipe_grid_0": {}
           },
           {
-            "nethersdelight_recipe_grid_1@chest.nethersdelight_recipe_grid_1": {}
+            "nethersdelight_recipe_grid_1@cooking_pot.nethersdelight_recipe_grid_1": {}
           }
         ]
       }
