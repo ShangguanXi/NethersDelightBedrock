@@ -18,6 +18,8 @@ class StuffedHoglinComponent {
         const block = args.block;
         const dimension = args.dimension;
         const player = args.player;
+        if (!player)
+            return;
         const servings = block.permutation.getState("nethersdelight:servings");
         const container = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex);
         const direction = block.permutation.getState("minecraft:cardinal_direction");

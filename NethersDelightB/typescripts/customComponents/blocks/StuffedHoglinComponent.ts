@@ -1,4 +1,4 @@
-import { BlockComponentPlayerInteractEvent, BlockCustomComponent, Dimension, world, WorldInitializeBeforeEvent } from "@minecraft/server";
+import { BlockComponentPlayerInteractEvent, BlockCustomComponent, Dimension, EntityInventoryComponent, world, WorldInitializeBeforeEvent } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
 
@@ -11,8 +11,9 @@ class StuffedHoglinComponent implements BlockCustomComponent {
         const block = args.block;
         const dimension = args.dimension;
         const player = args.player;
+        if (!player) return;
         const servings = block.permutation.getState("nethersdelight:servings") as number
-        const container = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex)
+        const container = (player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex)
         const direction = block.permutation.getState("minecraft:cardinal_direction") as 'north' | 'south' | 'east' | 'west';
         const part = block.permutation.getState("nethersdelight:part") as 'head' | 'foot';
         const directions = {

@@ -1,4 +1,4 @@
-import { world, PlayerBreakBlockBeforeEvent, ItemComponentTypes, system } from "@minecraft/server";
+import { world, PlayerBreakBlockBeforeEvent, ItemComponentTypes, system, EntityInventoryComponent, ItemEnchantableComponent } from "@minecraft/server";
 import { EventAPI } from "../lib/EventAPI";
 import { ItemAPI } from "../lib/ItemAPI";
 
@@ -12,9 +12,9 @@ export class StuffedHoglin {
         const dimension = args.dimension;
         if (typeId == "nethersdelight:stuffed_hoglin") {
             if (player.getGameMode() == "creative") return;
-            const selectedItem = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).getItem();
+            const selectedItem =(player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex).getItem();
             if (!selectedItem) return
-            const silkTouch = selectedItem.getComponent(ItemComponentTypes.Enchantable)?.hasEnchantment("silk_touch");
+            const silkTouch = (selectedItem.getComponent(ItemComponentTypes.Enchantable) as ItemEnchantableComponent)?.hasEnchantment("silk_touch");
             if (!silkTouch) return;
             args.cancel = true;
             const direction = block.permutation.getState("minecraft:cardinal_direction") as 'north' | 'south' | 'east' | 'west';
@@ -33,7 +33,7 @@ export class StuffedHoglin {
                     'east': { x: block.location.x - 1, y: block.location.y, z: block.location.z },
                     'west': { x: block.location.x + 1, y: block.location.y, z: block.location.z }
                 }
-            };
+            }; 
             const targetLocation = directions[part][direction];
             system.runTimeout(() => {
                 if (servings==0){

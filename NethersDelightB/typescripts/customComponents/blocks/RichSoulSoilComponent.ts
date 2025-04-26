@@ -1,4 +1,4 @@
-import { BlockComponentPlayerInteractEvent, BlockCustomComponent, ItemEnchantableComponent, WorldInitializeBeforeEvent, world } from "@minecraft/server";
+import { BlockComponentPlayerInteractEvent, BlockCustomComponent, EntityInventoryComponent, ItemEnchantableComponent, WorldInitializeBeforeEvent, world } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
 
@@ -12,7 +12,7 @@ class RichSoulSoilComponent implements BlockCustomComponent {
 
         const player = args.player;
         const face = args.face;
-        const container = player?.getComponent("inventory")?.container;
+        const container = (player?.getComponent("inventory") as EntityInventoryComponent)?.container;
         const block = args.block;
         const dimension = args.dimension;
         if (!player) return;

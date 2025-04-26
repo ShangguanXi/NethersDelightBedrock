@@ -1,6 +1,6 @@
 import { BlockComponentPlayerDestroyEvent, BlockComponentPlayerInteractEvent, BlockComponentRandomTickEvent, BlockCustomComponent, Dimension, EntityInventoryComponent, ItemEnchantableComponent, ItemStack, Vector3, WorldInitializeBeforeEvent, world } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
-import { EventAPI } from "../../lib/EventAPI";
+import { EventAPI } from "../../lib/EventAPI"
 import { RandomAPI } from "../../lib/RandomAPI";
 function spawnLoot(path: string, dimenion: Dimension, location: Vector3) {
     return dimenion.runCommand(`loot spawn ${location.x} ${location.y} ${location.z} loot "${path}"`)
@@ -13,7 +13,7 @@ class FungusColonyComponent implements BlockCustomComponent {
     onPlayerInteract(args: BlockComponentPlayerInteractEvent): void {
         const player = args.player;
         const face = args.face;
-        const container = player?.getComponent("inventory")?.container;
+        const container = (player?.getComponent("inventory") as EntityInventoryComponent)?.container;
         const block = args.block;
         const dimension = args.dimension;
         if (!player) return;
@@ -55,7 +55,7 @@ class FungusColonyComponent implements BlockCustomComponent {
         const brokenPerm = args.destroyedBlockPermutation;
         const blockId = brokenPerm.type.id;
         const player = args.player;
-        const container = player?.getComponent("inventory")?.container;
+        const container = (player?.getComponent("inventory") as EntityInventoryComponent)?.container;
         if (!player) return
         if (!container) return;
         const selectedSlot = container?.getSlot(player.selectedSlotIndex)

@@ -13,10 +13,11 @@ class PropelplantCaneComponent implements BlockCustomComponent {
     onPlayerDestroy(args: BlockComponentPlayerDestroyEvent): void {
         const block = args.block;
         const player = args.player;
+        if (!player) return
         const dimension = args.dimension;
         if (player?.getGameMode() == "creative") return
         try {
-            const isKnife = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).hasTag("farmersdelight:is_knife")
+            const isKnife = (player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex).hasTag("farmersdelight:is_knife")
             if (!isKnife) {
                 dimension.createExplosion(block.location, 1)
             }
@@ -43,9 +44,9 @@ class PropelplantCaneComponent implements BlockCustomComponent {
         const stage = String(block.permutation.getState("nethersdelight:stage"))
         const random = Math.floor(Math.random() * 101)
         if (!player) return;
-        const container: Container | undefined = player.getComponent(EntityInventoryComponent.componentId)?.container;
+        const container: Container | undefined = (player?.getComponent("inventory") as EntityInventoryComponent)?.container;
         try {
-            const itemId = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).typeId
+            const itemId = (player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex).typeId
             if ((!berry) && (stage == "berry_stem" || stage == "berry_cane")) {
                 if (itemId == "minecraft:bone_meal") {
                     world.playSound("item.bone_meal.use", block.location)

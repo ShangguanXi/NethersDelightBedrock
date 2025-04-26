@@ -45,7 +45,7 @@
                 "material": "particles_alpha", 
                 "texture": "textures/items/hoglin_loin"
             }, 
-            "identifier": "farmersdelight:skillet_hoglin_loin"
+            "identifier": "nethersdelight:skillet_hoglin_loin"
         }
     }
 }

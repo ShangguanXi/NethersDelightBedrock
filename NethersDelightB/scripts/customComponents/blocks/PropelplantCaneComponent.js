@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { WorldInitializeBeforeEvent, world, EntityInventoryComponent, system } from "@minecraft/server";
+import { WorldInitializeBeforeEvent, world, system } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
 import { RandomAPI } from "../../lib/RandomAPI";
@@ -21,6 +21,8 @@ class PropelplantCaneComponent {
     onPlayerDestroy(args) {
         const block = args.block;
         const player = args.player;
+        if (!player)
+            return;
         const dimension = args.dimension;
         if (player?.getGameMode() == "creative")
             return;
@@ -54,7 +56,7 @@ class PropelplantCaneComponent {
         const random = Math.floor(Math.random() * 101);
         if (!player)
             return;
-        const container = player.getComponent(EntityInventoryComponent.componentId)?.container;
+        const container = player?.getComponent("inventory")?.container;
         try {
             const itemId = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).typeId;
             if ((!berry) && (stage == "berry_stem" || stage == "berry_cane")) {

@@ -20,4 +20,4 @@ new FungusColonyComponentComponentRegister();
 new StuffedHoglin();
 new LootingRegister();
 new FoodRegister();
-new CookingPotRecipeRegister();
+new CookingPotRecipeRegister(); 

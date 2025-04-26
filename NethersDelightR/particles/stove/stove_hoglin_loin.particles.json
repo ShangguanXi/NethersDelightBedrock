@@ -53,7 +53,7 @@
                 "material": "particles_alpha", 
                 "texture": "textures/items/hoglin_loin"
             }, 
-            "identifier": "farmersdelight:stove_hoglin_loin"
+            "identifier": "nethersdelight:stove_hoglin_loin"
         }
     }
 }

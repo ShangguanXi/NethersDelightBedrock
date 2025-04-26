@@ -1,4 +1,4 @@
-import { EntityEquippableComponent, EntityHurtAfterEvent, EquipmentSlot, ItemStack, world } from "@minecraft/server"
+import { EntityEquippableComponent, EntityHealthComponent, EntityHurtAfterEvent, EntityOnFireComponent, EquipmentSlot, ItemStack, world } from "@minecraft/server"
 import { EventAPI } from "../lib/EventAPI"
 import { RandomAPI } from "../lib/RandomAPI";
 import { ItemAPI } from "../lib/ItemAPI";
@@ -10,12 +10,12 @@ export class LootingRegister {
         const hurtEntity = args.hurtEntity
         if (!entity || !hurtEntity)
             return;
-        const equipment = entity.getComponent(EntityEquippableComponent.componentId);
-        const onFire = hurtEntity.getComponent('minecraft:onfire')?.onFireTicksRemaining;
+        const equipment = entity.getComponent(EntityEquippableComponent.componentId) as EntityEquippableComponent;
+        const onFire = (hurtEntity.getComponent('minecraft:onfire') as EntityOnFireComponent)?.onFireTicksRemaining;
         const mainHand = equipment?.getEquipmentSlot(EquipmentSlot.Mainhand);
         if (!mainHand) return;
         //if (!mainHand?.hasTag('nethersdelight:is_machete')) return;
-        const health = hurtEntity.getComponent('minecraft:health');
+        const health = hurtEntity.getComponent('minecraft:health') as EntityHealthComponent;
         if (!health?.currentValue && hurtEntity.typeId === 'minecraft:hoglin') {
             if (onFire != undefined) {
                 ItemAPI.spawn(hurtEntity, 'nethersdelight:hoglin_hide', 1 + RandomAPI.RandomInt(2));
