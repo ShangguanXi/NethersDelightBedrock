@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { world, PlayerBreakBlockBeforeEvent, ItemComponentTypes, system } from "@minecraft/server";
+import { world, PlayerBreakBlockBeforeEvent, ItemComponentTypes, system, GameMode } from "@minecraft/server";
 import { EventAPI } from "../lib/EventAPI";
 import { ItemAPI } from "../lib/ItemAPI";
 export class StuffedHoglin {
@@ -17,7 +17,7 @@ export class StuffedHoglin {
         const player = args.player;
         const dimension = args.dimension;
         if (typeId == "nethersdelight:stuffed_hoglin") {
-            if (player.getGameMode() == "creative")
+            if (player.getGameMode() == GameMode.Creative)
                 return;
             const selectedItem = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).getItem();
             if (!selectedItem)
@@ -48,7 +48,7 @@ export class StuffedHoglin {
                 if (servings == 0) {
                     ItemAPI.spawn(block, typeId);
                 }
-                dimension.runCommandAsync(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`);
+                dimension.runCommand(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`);
                 ItemAPI.damage(player, player.selectedSlotIndex, 1);
             });
         }

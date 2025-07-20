@@ -1,8 +1,8 @@
-import { BlockComponentPlayerInteractEvent, BlockCustomComponent, Dimension, EntityInventoryComponent, world, WorldInitializeBeforeEvent } from "@minecraft/server";
+import { BlockComponentPlayerInteractEvent, BlockCustomComponent, system, EntityInventoryComponent, world, StartupEvent, GameMode } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
 
-class StuffedHoglinComponent implements BlockCustomComponent {
+export class StuffedHoglinComponent implements BlockCustomComponent {
     constructor() {
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
     }
@@ -44,7 +44,7 @@ class StuffedHoglinComponent implements BlockCustomComponent {
                     if (!targetBlock) return
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1))
                     ItemAPI.spawn(block, "nethersdelight:hoglin_ear")
-                    if (player?.getGameMode() == "creative") return
+                    if (player?.getGameMode() == GameMode.Creative) return
                     if (!player) return
                     ItemAPI.damage(player, player.selectedSlotIndex)
 
@@ -67,7 +67,7 @@ class StuffedHoglinComponent implements BlockCustomComponent {
                     if (!targetBlock) return
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1))
                     ItemAPI.spawn(block, "nethersdelight:plate_of_stuffed_hoglin_snout")
-                    if (player?.getGameMode() == "creative") return
+                    if (player?.getGameMode() == GameMode.Creative) return
                     if (!player) return
                     ItemAPI.clear(player, player.selectedSlotIndex)
 
@@ -89,7 +89,7 @@ class StuffedHoglinComponent implements BlockCustomComponent {
                     if (!targetBlock) return
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1))
                     ItemAPI.spawn(block, "nethersdelight:plate_of_stuffed_hoglin_ham")
-                    if (player?.getGameMode() == "creative") return
+                    if (player?.getGameMode() == GameMode.Creative) return
                     if (!player) return
                     ItemAPI.clear(player, player.selectedSlotIndex)
 
@@ -113,7 +113,7 @@ class StuffedHoglinComponent implements BlockCustomComponent {
                     if (!targetBlock) return
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1))
                     ItemAPI.spawn(block, "nethersdelight:plate_of_stuffed_hoglin_roast")
-                    if (player?.getGameMode() == "creative") return
+                    if (player?.getGameMode() == GameMode.Creative) return
                     if (!player) return
                     ItemAPI.clear(player, player.selectedSlotIndex)
                 }
@@ -123,16 +123,13 @@ class StuffedHoglinComponent implements BlockCustomComponent {
             }
         };
         if (servings == 11) {
-            dimension.runCommandAsync(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`)
+            dimension.runCommand(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`)
             ItemAPI.spawn(block, "minecraft:bowl")
             ItemAPI.spawn(block, "minecraft:bone", 4)
         };
     }
-}
-export class StuffedHoglinBlockComponentRegister {
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args: WorldInitializeBeforeEvent) {
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args: StartupEvent) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:stuffed_hoglin', new StuffedHoglinComponent());
     }
-
 }

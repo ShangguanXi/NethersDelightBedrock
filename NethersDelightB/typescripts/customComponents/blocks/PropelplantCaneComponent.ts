@@ -1,21 +1,21 @@
-import { BlockCustomComponent, BlockComponentPlayerInteractEvent, WorldInitializeBeforeEvent, world, Dimension, Vector3, BlockComponentRandomTickEvent, EntityInventoryComponent, Container, BlockComponentPlayerDestroyEvent, BlockComponentTickEvent, system } from "@minecraft/server";
+import { BlockCustomComponent, BlockComponentPlayerInteractEvent, StartupEvent, world, Dimension, BlockComponentPlayerBreakEvent, BlockComponentRandomTickEvent, EntityInventoryComponent, Container, BlockComponentTickEvent, system, GameMode } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
 import { RandomAPI } from "../../lib/RandomAPI";
 
-class PropelplantCaneComponent implements BlockCustomComponent {
+export class PropelplantCaneComponent implements BlockCustomComponent {
     constructor() {
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
         this.onRandomTick = this.onRandomTick.bind(this);
         this.onTick = this.onTick.bind(this);
-        this.onPlayerDestroy = this.onPlayerDestroy.bind(this);
+        this.onPlayerBreak = this.onPlayerBreak.bind(this);
     }
-    onPlayerDestroy(args: BlockComponentPlayerDestroyEvent): void {
+    onPlayerBreak(args: BlockComponentPlayerBreakEvent): void {
         const block = args.block;
         const player = args.player;
         if (!player) return
         const dimension = args.dimension;
-        if (player?.getGameMode() == "creative") return
+        if (player?.getGameMode() == GameMode.Creative) return
         try {
             const isKnife = (player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex).hasTag("farmersdelight:is_knife")
             if (!isKnife) {
@@ -49,8 +49,8 @@ class PropelplantCaneComponent implements BlockCustomComponent {
             const itemId = (player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex).typeId
             if ((!berry) && (stage == "berry_stem" || stage == "berry_cane")) {
                 if (itemId == "minecraft:bone_meal") {
-                    world.playSound("item.bone_meal.use", block.location)
-                    if (player?.getGameMode() == "creative") {
+                    player.dimension.playSound("item.bone_meal.use", block.location)
+                    if (player?.getGameMode() == GameMode.Creative) {
                         block.dimension.spawnParticle("minecraft:crop_growth_emitter", { x: block.location.x + 0.5, y: block.location.y + 0.5, z: block.location.z + 0.5 });
                         block.setPermutation(block.permutation.withState("nethersdelight:berry", true))
                     }
@@ -66,14 +66,14 @@ class PropelplantCaneComponent implements BlockCustomComponent {
 
             }
             if (berry && (stage == "berry_stem" || stage == "berry_cane")) {
-                world.playSound("item.bone_meal.use", block.location)
+                player.dimension.playSound("item.bone_meal.use", block.location)
                 block.setPermutation(block.permutation.withState("nethersdelight:berry", false))
                 ItemAPI.spawn(block, "nethersdelight:propelpearl", 1 + RandomAPI.RandomInt(2))
             }
 
         } catch (error) {
             if (berry && (stage == "berry_stem" || stage == "berry_cane")) {
-                world.playSound("item.bone_meal.use", block.location)
+                player.dimension.playSound("item.bone_meal.use", block.location)
                 block.setPermutation(block.permutation.withState("nethersdelight:berry", false))
                 ItemAPI.spawn(block, "nethersdelight:propelpearl", 1 + RandomAPI.RandomInt(2))
             }
@@ -126,10 +126,8 @@ class PropelplantCaneComponent implements BlockCustomComponent {
             }
         }
     }
-}
-export class PropelplantCaneComponentRegister {
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args: WorldInitializeBeforeEvent) {
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args: StartupEvent) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:propelplant_cane', new PropelplantCaneComponent());
     }
     

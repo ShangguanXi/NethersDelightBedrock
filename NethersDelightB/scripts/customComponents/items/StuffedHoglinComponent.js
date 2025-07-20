@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { StructureRotation, world, WorldInitializeBeforeEvent } from "@minecraft/server";
+import { StructureRotation, world, StartupEvent, system, GameMode } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
-class StuffedHoglinComponent {
+export class StuffedHoglinItemComponent {
     constructor() {
         this.onUseOn = this.onUseOn.bind(this);
     }
@@ -51,21 +51,19 @@ class StuffedHoglinComponent {
                 }
             }
             ;
-            if (source.getGameMode() == "creative")
+            if (source.getGameMode() == GameMode.Creative)
                 return;
             ItemAPI.clear(source, source.selectedSlotIndex);
         }
     }
-}
-export class StuffedHoglinComponentRegister {
     register(args) {
-        args.itemComponentRegistry.registerCustomComponent('nethersdelight:stuffed_hoglin', new StuffedHoglinComponent());
+        args.itemComponentRegistry.registerCustomComponent('nethersdelight:stuffed_hoglin', new StuffedHoglinItemComponent());
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
-], StuffedHoglinComponentRegister.prototype, "register", null);
+], StuffedHoglinItemComponent.prototype, "register", null);
 //# sourceMappingURL=StuffedHoglinComponent.js.map

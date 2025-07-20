@@ -41,3 +41,6 @@ item.nethersdelight:strider_moss_stew=炽足兽炖蘑菇
 item.nethersdelight:strider_slice=炽足兽肉片
 item.nethersdelight:warped_moldy_meat=诡异霉烂肉
 nethersdelight.feast.use_knife=你需要一把刀来切它！
+
+
+nethersdelight:itemGroup.name.machete=下界乐事-砍刀

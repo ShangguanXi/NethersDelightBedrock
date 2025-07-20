@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { world, WorldInitializeBeforeEvent } from "@minecraft/server";
+import { system, StartupEvent, GameMode } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
-class StuffedHoglinComponent {
+export class StuffedHoglinComponent {
     constructor() {
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
     }
@@ -53,7 +53,7 @@ class StuffedHoglinComponent {
                         return;
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1));
                     ItemAPI.spawn(block, "nethersdelight:hoglin_ear");
-                    if (player?.getGameMode() == "creative")
+                    if (player?.getGameMode() == GameMode.Creative)
                         return;
                     if (!player)
                         return;
@@ -79,7 +79,7 @@ class StuffedHoglinComponent {
                         return;
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1));
                     ItemAPI.spawn(block, "nethersdelight:plate_of_stuffed_hoglin_snout");
-                    if (player?.getGameMode() == "creative")
+                    if (player?.getGameMode() == GameMode.Creative)
                         return;
                     if (!player)
                         return;
@@ -105,7 +105,7 @@ class StuffedHoglinComponent {
                         return;
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1));
                     ItemAPI.spawn(block, "nethersdelight:plate_of_stuffed_hoglin_ham");
-                    if (player?.getGameMode() == "creative")
+                    if (player?.getGameMode() == GameMode.Creative)
                         return;
                     if (!player)
                         return;
@@ -131,7 +131,7 @@ class StuffedHoglinComponent {
                         return;
                     targetBlock.setPermutation(targetBlock.permutation.withState("nethersdelight:servings", servings + 1));
                     ItemAPI.spawn(block, "nethersdelight:plate_of_stuffed_hoglin_roast");
-                    if (player?.getGameMode() == "creative")
+                    if (player?.getGameMode() == GameMode.Creative)
                         return;
                     if (!player)
                         return;
@@ -144,22 +144,20 @@ class StuffedHoglinComponent {
         }
         ;
         if (servings == 11) {
-            dimension.runCommandAsync(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`);
+            dimension.runCommand(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`);
             ItemAPI.spawn(block, "minecraft:bowl");
             ItemAPI.spawn(block, "minecraft:bone", 4);
         }
         ;
     }
-}
-export class StuffedHoglinBlockComponentRegister {
     register(args) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:stuffed_hoglin', new StuffedHoglinComponent());
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
-], StuffedHoglinBlockComponentRegister.prototype, "register", null);
+], StuffedHoglinComponent.prototype, "register", null);
 //# sourceMappingURL=StuffedHoglinComponent.js.map

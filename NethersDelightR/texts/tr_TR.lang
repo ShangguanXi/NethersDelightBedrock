@@ -38,3 +38,5 @@ item.nethersdelight:strider_moss_stew=Lavgezer Sarmaşığı Yahnisi
 item.nethersdelight:strider_slice=Lavgezer Dilimi
 item.nethersdelight:warped_moldy_meat=Çarpık Küflü Et
 nethersdelight.feast.use_knife=Bunu Kesmek İçin Bıçağa İhtiyacın Var.
+
+nethersdelight:itemGroup.name.machete=Nether'ın Zevki - Maçete

@@ -1,10 +1,11 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "nethersdelight:soul_compost",
             "menu_category": {
-                "category": "nature"
+                "category": "nature",
+                "group":"farmersdelight:itemGroup.name.soil"
             },
             "states": {
                 "farmersdelight:process": [
@@ -62,17 +63,19 @@
             }
         ],
         "components": {
-            "minecraft:custom_components": [
-                "nethersdelight:soul_compost"
-            ],
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "soul_compost_0"
+                }
+            },
+            "nethersdelight:soul_compost": {},
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0.6
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 3
             },
-            "minecraft:geometry": "geometry.block",
-            
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "tag:dirt": {},
             "tag:compost_activators": {}
         }

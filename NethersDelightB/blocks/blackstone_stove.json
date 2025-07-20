@@ -1,10 +1,11 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "nethersdelight:blackstone_stove",
             "menu_category": {
-                "category": "items"
+                "category": "items",
+                "group": "farmersdelight:itemGroup.name.cooker"
             },
             "states": {
                 "farmersdelight:is_working": [
@@ -95,16 +96,24 @@
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "blackstone_stove_side"
+                            "texture": "blackstone_stove_side",
+                            "ambient_occlusion": false,
+                            "face_dimming": false
                         },
                         "up": {
-                            "texture": "blackstone_stove_top_on"
+                            "texture": "blackstone_stove_top_on",
+                            "ambient_occlusion": false,
+                            "face_dimming": false
                         },
                         "down": {
-                            "texture": "blackstone_stove_bottom"
+                            "texture": "blackstone_stove_bottom",
+                            "ambient_occlusion": false,
+                            "face_dimming": false
                         },
                         "south": {
-                            "texture": "blackstone_stove_front_on"
+                            "texture": "blackstone_stove_front_on",
+                            "ambient_occlusion": false,
+                            "face_dimming": false
                         }
                     },
                     "minecraft:light_emission": 12,
@@ -113,9 +122,29 @@
             }
         ],
         "components": {
-            "minecraft:custom_components": [
-                "farmersdelight:stove"
-            ],
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "blackstone_stove_side",
+                    "ambient_occlusion": false,
+                    "face_dimming": false
+                },
+                "up": {
+                    "texture": "blackstone_stove_top_on",
+                    "ambient_occlusion": false,
+                    "face_dimming": false
+                },
+                "down": {
+                    "texture": "blackstone_stove_bottom",
+                    "ambient_occlusion": false,
+                    "face_dimming": false
+                },
+                "south": {
+                    "texture": "blackstone_stove_front_on",
+                    "ambient_occlusion": false,
+                    "face_dimming": false
+                }
+            },
+            "farmersdelight:stove": {},
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 1
             },

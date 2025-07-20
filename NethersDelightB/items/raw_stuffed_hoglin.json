@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:item": {
     "components": {
       "minecraft:icon": {
@@ -12,7 +12,7 @@
       "identifier": "nethersdelight:raw_stuffed_hoglin",
       "menu_category": {
         "category": "nature",
-        "group": "itemGroup.name.rawFood"
+        "group": "farmersdelight:itemGroup.name.rawFood"
       }
     }
   }

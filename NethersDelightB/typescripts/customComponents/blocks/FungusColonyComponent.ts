@@ -1,14 +1,15 @@
-import { BlockComponentPlayerDestroyEvent, BlockComponentPlayerInteractEvent, BlockComponentRandomTickEvent, BlockCustomComponent, Dimension, EntityInventoryComponent, ItemEnchantableComponent, ItemStack, Vector3, WorldInitializeBeforeEvent, world } from "@minecraft/server";
+import { BlockComponentPlayerInteractEvent, BlockComponentRandomTickEvent, BlockCustomComponent, Dimension, StartupEvent, EntityInventoryComponent, BlockComponentPlayerBreakEvent, ItemStack, Vector3, GameMode, system } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI"
 import { RandomAPI } from "../../lib/RandomAPI";
 function spawnLoot(path: string, dimenion: Dimension, location: Vector3) {
     return dimenion.runCommand(`loot spawn ${location.x} ${location.y} ${location.z} loot "${path}"`)
 }
-class FungusColonyComponent implements BlockCustomComponent {
+export class FungusColonyComponent implements BlockCustomComponent {
     constructor() {
         this.onRandomTick = this.onRandomTick.bind(this);
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
+        this.onPlayerBreak = this.onPlayerBreak.bind(this);
     }
     onPlayerInteract(args: BlockComponentPlayerInteractEvent): void {
         const player = args.player;
@@ -51,8 +52,8 @@ class FungusColonyComponent implements BlockCustomComponent {
         }
 
     }
-    onPlayerDestroy(args: BlockComponentPlayerDestroyEvent): void {
-        const brokenPerm = args.destroyedBlockPermutation;
+    onPlayerBreak(args: BlockComponentPlayerBreakEvent): void {
+        const brokenPerm = args.brokenBlockPermutation;
         const blockId = brokenPerm.type.id;
         const player = args.player;
         const container = (player?.getComponent("inventory") as EntityInventoryComponent)?.container;
@@ -66,7 +67,7 @@ class FungusColonyComponent implements BlockCustomComponent {
             const {x, y, z} = args.block.location
             if (growth == 4 && itemId == 'minecraft:shears'){
                 player.dimension.spawnItem(new ItemStack(`${blockId}`), {x:x + 0.5, y, z:z + 0.5});
-                if (player.getGameMode()=="creative") return
+                if (player.getGameMode()==GameMode.Creative) return
                 ItemAPI.damage(player, player.selectedSlotIndex)
             }
             else{
@@ -86,11 +87,8 @@ class FungusColonyComponent implements BlockCustomComponent {
         }
 
     }
-}
-export class FungusColonyComponentComponentRegister {
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args: WorldInitializeBeforeEvent) {
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args: StartupEvent) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:fungus_colony', new FungusColonyComponent());
     }
-
 }

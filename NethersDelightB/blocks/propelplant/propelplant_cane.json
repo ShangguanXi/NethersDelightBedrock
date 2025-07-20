@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "nethersdelight:propelplant_cane",
@@ -88,15 +88,19 @@
             }
         ],
         "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "propelplant_berry_stem",
+                    "render_method": "alpha_test"
+                }
+            },
             "minecraft:tick": {
                 "interval_range": [
                     1,
                     1
                 ]
             },
-            "minecraft:custom_components": [
-                "nethersdelight:propelplant_cane"
-            ],
+            "nethersdelight:propelplant_cane": {},
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0.0
             },

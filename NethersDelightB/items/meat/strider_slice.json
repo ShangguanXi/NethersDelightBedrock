@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:item": {
     "components": {
       "minecraft:food": {
@@ -12,9 +12,17 @@
           "default": "strider_slice"
         }
       },
+      "farmersdelight:cuttable": {
+        "loot": [
+          ["nethersdelight:ground_strider", 2]
+        ],
+        "tool": {
+          "type": "tag",
+          "name": "farmersdelight:is_knife"
+        }
+      },
       "minecraft:tags": {
         "tags": [
-          "farmersdelight:can_cut.tag.farmersdelight:is_knife",
           "nethersdelight:raw_strider"
         ]
       },
@@ -27,7 +35,7 @@
       "identifier": "nethersdelight:strider_slice",
       "menu_category": {
         "category": "nature",
-        "group": "itemGroup.name.rawFood"
+        "group": "farmersdelight:itemGroup.name.rawFood"
       }
     }
   }

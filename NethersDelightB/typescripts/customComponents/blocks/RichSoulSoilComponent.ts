@@ -1,8 +1,9 @@
-import { BlockComponentPlayerInteractEvent, BlockCustomComponent, EntityInventoryComponent, ItemEnchantableComponent, WorldInitializeBeforeEvent, world } from "@minecraft/server";
+import { BlockComponentPlayerInteractEvent, BlockCustomComponent, EntityInventoryComponent, ItemEnchantableComponent, StartupEvent, system, world } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
 
-class RichSoulSoilComponent implements BlockCustomComponent {
+
+export class RichSoulSoilComponent implements BlockCustomComponent {
     constructor() {
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
 
@@ -24,18 +25,18 @@ class RichSoulSoilComponent implements BlockCustomComponent {
             const topBlockId = dimension.getBlock(topLocation)?.typeId
             if (face == 'Up' && topBlockId == "minecraft:air") {
                 if (itemId == "minecraft:sugar_cane") {
-                    world.playSound("dig.grass", block.location)
+                    player.dimension.playSound("dig.grass", block.location)
                     dimension.setBlockType(topLocation, "farmersdelight:rich_soil_sugar_cane_bottom")
                     ItemAPI.clear(player, player.selectedSlotIndex)
                 }
                 if (itemId == "minecraft:crimson_fungus") {
-                    world.playSound("dig.grass", block.location)
+                    player.dimension.playSound("dig.grass", block.location)
                     dimension.setBlockType(topLocation, "nethersdelight:crimson_fungus_colony")
                     ItemAPI.clear(player, player.selectedSlotIndex)
 
                 }
                 if (itemId == "minecraft:warped_fungus") {
-                    world.playSound("dig.grass", block.location)
+                    player.dimension.playSound("dig.grass", block.location)
                     dimension.setBlockType(topLocation, "nethersdelight:warped_fungus_colony")
                     ItemAPI.clear(player, player.selectedSlotIndex)
 
@@ -48,11 +49,8 @@ class RichSoulSoilComponent implements BlockCustomComponent {
 
 
     }
-}
-export class RichSoulSoilComponentRegister {
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args: WorldInitializeBeforeEvent) {
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args: StartupEvent) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:rich_soil', new RichSoulSoilComponent());
     }
-
 }

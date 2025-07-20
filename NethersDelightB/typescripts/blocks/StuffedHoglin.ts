@@ -1,4 +1,4 @@
-import { world, PlayerBreakBlockBeforeEvent, ItemComponentTypes, system, EntityInventoryComponent, ItemEnchantableComponent } from "@minecraft/server";
+import { world, PlayerBreakBlockBeforeEvent, ItemComponentTypes, system, EntityInventoryComponent, ItemEnchantableComponent, GameMode } from "@minecraft/server";
 import { EventAPI } from "../lib/EventAPI";
 import { ItemAPI } from "../lib/ItemAPI";
 
@@ -11,7 +11,7 @@ export class StuffedHoglin {
         const player = args.player;
         const dimension = args.dimension;
         if (typeId == "nethersdelight:stuffed_hoglin") {
-            if (player.getGameMode() == "creative") return;
+            if (player.getGameMode() == GameMode.Creative) return;
             const selectedItem =(player?.getComponent("inventory") as EntityInventoryComponent)?.container?.getSlot(player.selectedSlotIndex).getItem();
             if (!selectedItem) return
             const silkTouch = (selectedItem.getComponent(ItemComponentTypes.Enchantable) as ItemEnchantableComponent)?.hasEnchantment("silk_touch");
@@ -39,7 +39,7 @@ export class StuffedHoglin {
                 if (servings==0){
                     ItemAPI.spawn(block, typeId)
                 }
-                dimension.runCommandAsync(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`)
+                dimension.runCommand(`/fill ${block.location.x} ${block.location.y} ${block.location.z} ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} air destroy`)
                 ItemAPI.damage(player, player.selectedSlotIndex, 1);
             })
 

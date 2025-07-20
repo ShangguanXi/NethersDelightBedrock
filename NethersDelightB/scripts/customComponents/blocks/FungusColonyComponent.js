@@ -7,17 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { ItemStack, WorldInitializeBeforeEvent, world } from "@minecraft/server";
+import { StartupEvent, ItemStack, GameMode, system } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
 import { RandomAPI } from "../../lib/RandomAPI";
 function spawnLoot(path, dimenion, location) {
     return dimenion.runCommand(`loot spawn ${location.x} ${location.y} ${location.z} loot "${path}"`);
 }
-class FungusColonyComponent {
+export class FungusColonyComponent {
     constructor() {
         this.onRandomTick = this.onRandomTick.bind(this);
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
+        this.onPlayerBreak = this.onPlayerBreak.bind(this);
     }
     onPlayerInteract(args) {
         const player = args.player;
@@ -58,8 +59,8 @@ class FungusColonyComponent {
         catch (error) {
         }
     }
-    onPlayerDestroy(args) {
-        const brokenPerm = args.destroyedBlockPermutation;
+    onPlayerBreak(args) {
+        const brokenPerm = args.brokenBlockPermutation;
         const blockId = brokenPerm.type.id;
         const player = args.player;
         const container = player?.getComponent("inventory")?.container;
@@ -76,7 +77,7 @@ class FungusColonyComponent {
             const { x, y, z } = args.block.location;
             if (growth == 4 && itemId == 'minecraft:shears') {
                 player.dimension.spawnItem(new ItemStack(`${blockId}`), { x: x + 0.5, y, z: z + 0.5 });
-                if (player.getGameMode() == "creative")
+                if (player.getGameMode() == GameMode.Creative)
                     return;
                 ItemAPI.damage(player, player.selectedSlotIndex);
             }
@@ -94,16 +95,14 @@ class FungusColonyComponent {
             block.setPermutation(block.permutation.withState('farmersdelight:growth', growth + 1));
         }
     }
-}
-export class FungusColonyComponentComponentRegister {
     register(args) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:fungus_colony', new FungusColonyComponent());
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
-], FungusColonyComponentComponentRegister.prototype, "register", null);
+], FungusColonyComponent.prototype, "register", null);
 //# sourceMappingURL=FungusColonyComponent.js.map

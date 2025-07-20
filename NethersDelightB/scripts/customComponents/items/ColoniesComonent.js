@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { BlockPermutation, Direction, WorldInitializeBeforeEvent, world } from "@minecraft/server";
+import { BlockPermutation, Direction, GameMode, StartupEvent, system } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
 class ColoniesComonent {
@@ -32,7 +32,7 @@ class ColoniesComonent {
             const main = block.above();
             const mainPerm = BlockPermutation.resolve(itemStack.typeId, { 'farmersdelight:growth': 4 });
             main?.setPermutation(mainPerm);
-            if (player.getGameMode() == "creative")
+            if (player.getGameMode() == GameMode.Creative)
                 return;
             ItemAPI.clear(player, player.selectedSlotIndex);
         }
@@ -44,9 +44,9 @@ export class ColoniesComonentRegister {
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
 ], ColoniesComonentRegister.prototype, "register", null);
 //# sourceMappingURL=ColoniesComonent.js.map

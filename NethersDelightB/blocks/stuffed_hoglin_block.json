@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "nethersdelight:stuffed_hoglin",
@@ -358,9 +358,7 @@
         ],
         "components": {
             "minecraft:geometry": "geometry.stuffed_hoglin_head1",
-            "minecraft:custom_components": [
-                "nethersdelight:stuffed_hoglin"
-            ],
+            "nethersdelight:stuffed_hoglin": {},
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0.25
             },

@@ -38,3 +38,5 @@ item.nethersdelight:strider_moss_stew=Strider Moss Stew
 item.nethersdelight:strider_slice=Strider Slice
 item.nethersdelight:warped_moldy_meat=Warped Moldy Meat
 nethersdelight.feast.use_knife=You need a Knife to cut this.
+
+nethersdelight:itemGroup.name.machete=Nether's Delight - Machete

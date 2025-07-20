@@ -1,4 +1,4 @@
-import { BlockPermutation, Container, Direction, ItemComponentUseOnEvent, ItemCustomComponent, Player, WorldInitializeBeforeEvent, system, world } from "@minecraft/server";
+import { BlockPermutation, Container, Direction, GameMode, ItemComponentUseOnEvent, ItemCustomComponent, Player, StartupEvent, system, world } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
 
@@ -22,7 +22,7 @@ class ColoniesComonent implements ItemCustomComponent{
             const main = block.above();
             const mainPerm = BlockPermutation.resolve(itemStack.typeId, { 'farmersdelight:growth': 4 });
             main?.setPermutation(mainPerm);
-            if (player.getGameMode()=="creative") return
+            if (player.getGameMode()==GameMode.Creative) return
             ItemAPI.clear(player, player.selectedSlotIndex);
         }
        
@@ -30,8 +30,8 @@ class ColoniesComonent implements ItemCustomComponent{
 
 }
 export class ColoniesComonentRegister{
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args:WorldInitializeBeforeEvent){
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args:StartupEvent){
         args.itemComponentRegistry.registerCustomComponent('nethersdelight:colonies', new ColoniesComonent())
     }
   

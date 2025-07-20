@@ -1,10 +1,19 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:item": {
     "components": {
       "minecraft:icon": {
         "textures": {
           "default": "hoglin_hide"
+        }
+      },
+      "farmersdelight:cuttable": {
+        "loot": [
+          ["minecraft:leather", 4]
+        ],
+        "tool": {
+          "type": "tag",
+          "name": "farmersdelight:is_knife"
         }
       },
       "minecraft:tags": {
@@ -17,7 +26,7 @@
       "identifier": "nethersdelight:hoglin_hide",
       "menu_category": {
         "category": "items",
-        "group": "itemGroup.name.nethersdelight_items"
+        "group": "farmersdelight:itemGroup.name.nethersdelight_items"
       }
     }
   }

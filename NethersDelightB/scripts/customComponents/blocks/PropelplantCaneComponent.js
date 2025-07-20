@@ -7,24 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { WorldInitializeBeforeEvent, world, system } from "@minecraft/server";
+import { StartupEvent, system, GameMode } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
 import { RandomAPI } from "../../lib/RandomAPI";
-class PropelplantCaneComponent {
+export class PropelplantCaneComponent {
     constructor() {
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
         this.onRandomTick = this.onRandomTick.bind(this);
         this.onTick = this.onTick.bind(this);
-        this.onPlayerDestroy = this.onPlayerDestroy.bind(this);
+        this.onPlayerBreak = this.onPlayerBreak.bind(this);
     }
-    onPlayerDestroy(args) {
+    onPlayerBreak(args) {
         const block = args.block;
         const player = args.player;
         if (!player)
             return;
         const dimension = args.dimension;
-        if (player?.getGameMode() == "creative")
+        if (player?.getGameMode() == GameMode.Creative)
             return;
         try {
             const isKnife = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).hasTag("farmersdelight:is_knife");
@@ -61,8 +61,8 @@ class PropelplantCaneComponent {
             const itemId = player?.getComponent("inventory")?.container?.getSlot(player.selectedSlotIndex).typeId;
             if ((!berry) && (stage == "berry_stem" || stage == "berry_cane")) {
                 if (itemId == "minecraft:bone_meal") {
-                    world.playSound("item.bone_meal.use", block.location);
-                    if (player?.getGameMode() == "creative") {
+                    player.dimension.playSound("item.bone_meal.use", block.location);
+                    if (player?.getGameMode() == GameMode.Creative) {
                         block.dimension.spawnParticle("minecraft:crop_growth_emitter", { x: block.location.x + 0.5, y: block.location.y + 0.5, z: block.location.z + 0.5 });
                         block.setPermutation(block.permutation.withState("nethersdelight:berry", true));
                     }
@@ -78,14 +78,14 @@ class PropelplantCaneComponent {
                 }
             }
             if (berry && (stage == "berry_stem" || stage == "berry_cane")) {
-                world.playSound("item.bone_meal.use", block.location);
+                player.dimension.playSound("item.bone_meal.use", block.location);
                 block.setPermutation(block.permutation.withState("nethersdelight:berry", false));
                 ItemAPI.spawn(block, "nethersdelight:propelpearl", 1 + RandomAPI.RandomInt(2));
             }
         }
         catch (error) {
             if (berry && (stage == "berry_stem" || stage == "berry_cane")) {
-                world.playSound("item.bone_meal.use", block.location);
+                player.dimension.playSound("item.bone_meal.use", block.location);
                 block.setPermutation(block.permutation.withState("nethersdelight:berry", false));
                 ItemAPI.spawn(block, "nethersdelight:propelpearl", 1 + RandomAPI.RandomInt(2));
             }
@@ -138,16 +138,14 @@ class PropelplantCaneComponent {
             }
         }
     }
-}
-export class PropelplantCaneComponentRegister {
     register(args) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:propelplant_cane', new PropelplantCaneComponent());
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
-], PropelplantCaneComponentRegister.prototype, "register", null);
+], PropelplantCaneComponent.prototype, "register", null);
 //# sourceMappingURL=PropelplantCaneComponent.js.map

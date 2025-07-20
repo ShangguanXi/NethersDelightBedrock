@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { world, WorldInitializeBeforeEvent, BlockPermutation, BlockVolume } from "@minecraft/server";
+import { system, StartupEvent, BlockPermutation, BlockVolume } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 const organicCompostDetectList = [
     'minecraft:soul_sand',
@@ -21,7 +21,7 @@ const organicCompostDetectList = [
     'minecraft:crimson_fungus',
     'minecraft:warped_fungus'
 ];
-class SoulCompostComonent {
+export class SoulCompostComonent {
     constructor() {
         this.onRandomTick = this.onRandomTick.bind(this);
     }
@@ -63,16 +63,14 @@ class SoulCompostComonent {
             }
         }
     }
-}
-export class SoulCompostComonentRegister {
     register(args) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:soul_compost', new SoulCompostComonent());
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
-], SoulCompostComonentRegister.prototype, "register", null);
+], SoulCompostComonent.prototype, "register", null);
 //# sourceMappingURL=SoulCompost.js.map

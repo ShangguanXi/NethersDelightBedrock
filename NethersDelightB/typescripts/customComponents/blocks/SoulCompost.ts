@@ -1,4 +1,4 @@
-import { BlockCustomComponent, BlockComponentRandomTickEvent, world, WorldInitializeBeforeEvent, BlockPermutation, BlockVolume } from "@minecraft/server";
+import { BlockCustomComponent, BlockComponentRandomTickEvent, system,StartupEvent, BlockPermutation, BlockVolume } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 const organicCompostDetectList = [
     'minecraft:soul_sand',
@@ -12,7 +12,7 @@ const organicCompostDetectList = [
     'minecraft:crimson_fungus',
     'minecraft:warped_fungus'
 ]
-class SoulCompostComonent implements BlockCustomComponent {
+export class SoulCompostComonent implements BlockCustomComponent {
     constructor() {
         this.onRandomTick = this.onRandomTick.bind(this);
     }
@@ -51,11 +51,8 @@ class SoulCompostComonent implements BlockCustomComponent {
         }
 
     }
-}
-export class SoulCompostComonentRegister {
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args: WorldInitializeBeforeEvent) {
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args: StartupEvent) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:soul_compost', new SoulCompostComonent());
     }
-
 }

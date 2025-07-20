@@ -7,23 +7,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { WorldInitializeAfterEvent, system, world } from "@minecraft/server";
+import { ScriptEventCommandMessageAfterEvent, system, world } from "@minecraft/server";
 import { EventAPI } from "../lib/EventAPI";
 let register = true;
 export class CookingPotRecipeRegister {
     register(args) {
         system.runInterval(() => {
             if (register) {
-                world.getDimension("overworld").runCommandAsync("function nethersdelight/recipe_registries");
+                world.getDimension("overworld").runCommand("function nethersdelight/recipe_registries");
                 register = false;
             }
         });
     }
 }
 __decorate([
-    EventAPI.register(world.afterEvents.worldInitialize),
+    EventAPI.register(system.afterEvents.scriptEventReceive),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeAfterEvent]),
+    __metadata("design:paramtypes", [ScriptEventCommandMessageAfterEvent]),
     __metadata("design:returntype", void 0)
 ], CookingPotRecipeRegister.prototype, "register", null);
 //# sourceMappingURL=CookingPotRecipeRegister.js.map

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:item": {
     "components": {
       "minecraft:damage": 7,
@@ -42,9 +42,9 @@
           }
         ]
       },
+      "farmersdelight:increase_production": {},
       "minecraft:tags": {
         "tags": [
-          "farmersdelight:is_knife",
           "nethersdelight:is_machete"
         ]
       }
@@ -53,7 +53,7 @@
       "identifier": "nethersdelight:netherite_machete",
       "menu_category": {
         "category": "equipment",
-        "group": "itemGroup.name.sword"
+        "group": "nethersdelight:itemGroup.name.machete"
       }
     }
   }

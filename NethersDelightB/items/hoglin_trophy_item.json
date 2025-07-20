@@ -1,10 +1,10 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:item": {
     "components": {
       "minecraft:block_placer": {
         "block": "nethersdelight:hoglin_trophy",
-        "use_block_description": true
+        "replace_block_item": true
       },
       "minecraft:icon": {
         "textures": {
@@ -16,7 +16,7 @@
       "identifier": "nethersdelight:hoglin_trophy",
       "menu_category": {
         "category": "items",
-        "group": "itemGroup.name.nethersdelight_items"
+        "group": "farmersdelight:itemGroup.name.nethersdelight_items"
       }
     }
   }

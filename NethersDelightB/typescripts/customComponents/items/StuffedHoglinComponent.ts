@@ -1,8 +1,8 @@
-import { ItemComponentUseOnEvent, ItemCustomComponent, Player, StructureRotation, world, WorldInitializeBeforeEvent } from "@minecraft/server";
+import { ItemComponentUseOnEvent, ItemCustomComponent, Player, StructureRotation, world, StartupEvent, system, GameMode } from "@minecraft/server";
 import { EventAPI } from "../../lib/EventAPI";
 import { ItemAPI } from "../../lib/ItemAPI";
 
-class StuffedHoglinComponent implements ItemCustomComponent {
+export class StuffedHoglinItemComponent implements ItemCustomComponent {
     constructor() {
         this.onUseOn = this.onUseOn.bind(this);
     }
@@ -42,15 +42,14 @@ class StuffedHoglinComponent implements ItemCustomComponent {
                     world.structureManager.place("nethersdelight:stuffed_hoglin", dimension, location, { rotation: StructureRotation.Rotate180 })
                 }
             };
-            if (source.getGameMode()=="creative")return
+            if (source.getGameMode()==GameMode.Creative)return
             ItemAPI.clear(source,source.selectedSlotIndex)
         }
     }
-}
-export class StuffedHoglinComponentRegister {
-    @EventAPI.register(world.beforeEvents.worldInitialize)
-    register(args: WorldInitializeBeforeEvent) {
-        args.itemComponentRegistry.registerCustomComponent('nethersdelight:stuffed_hoglin', new StuffedHoglinComponent());
+    @EventAPI.register(system.beforeEvents.startup)
+    register(args: StartupEvent) {
+        args.itemComponentRegistry.registerCustomComponent('nethersdelight:stuffed_hoglin', new StuffedHoglinItemComponent());
 
     }
+
 }

@@ -1,18 +1,24 @@
 {
-  "format_version": "1.21.40",
+  "format_version": "1.21.90",
   "minecraft:item": {
     "components": {
-      "minecraft:custom_components": [
-        "nethersdelight:colonies"
-      ],
+      "nethersdelight:colonies": {},
       "minecraft:icon": {
         "textures": {
           "default": "warped_fungus_colony"
         }
       },
+      "farmersdelight:cuttable": {
+        "loot": [
+          ["minecraft:warped_fungus", 5]
+        ],
+        "tool": {
+          "type": "tag",
+          "name": "farmersdelight:is_knife"
+        }
+      },
       "minecraft:tags": {
         "tags": [
-          "farmersdelight:can_cut.tag.farmersdelight:is_knife",
           "farmersdelight:is_fertilizer.65"
         ]
       }
@@ -21,7 +27,7 @@
       "identifier": "nethersdelight:warped_fungus_colony",
       "menu_category": {
         "category": "nature",
-        "group": "itemGroup.name.fungus_colony"
+        "group": "farmersdelight:itemGroup.name.wildcrop"
       }
     }
   }

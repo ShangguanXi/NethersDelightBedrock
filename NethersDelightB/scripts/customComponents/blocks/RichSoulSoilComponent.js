@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { WorldInitializeBeforeEvent, world } from "@minecraft/server";
+import { StartupEvent, system } from "@minecraft/server";
 import { ItemAPI } from "../../lib/ItemAPI";
 import { EventAPI } from "../../lib/EventAPI";
-class RichSoulSoilComponent {
+export class RichSoulSoilComponent {
     constructor() {
         this.onPlayerInteract = this.onPlayerInteract.bind(this);
     }
@@ -31,17 +31,17 @@ class RichSoulSoilComponent {
             const topBlockId = dimension.getBlock(topLocation)?.typeId;
             if (face == 'Up' && topBlockId == "minecraft:air") {
                 if (itemId == "minecraft:sugar_cane") {
-                    world.playSound("dig.grass", block.location);
+                    player.dimension.playSound("dig.grass", block.location);
                     dimension.setBlockType(topLocation, "farmersdelight:rich_soil_sugar_cane_bottom");
                     ItemAPI.clear(player, player.selectedSlotIndex);
                 }
                 if (itemId == "minecraft:crimson_fungus") {
-                    world.playSound("dig.grass", block.location);
+                    player.dimension.playSound("dig.grass", block.location);
                     dimension.setBlockType(topLocation, "nethersdelight:crimson_fungus_colony");
                     ItemAPI.clear(player, player.selectedSlotIndex);
                 }
                 if (itemId == "minecraft:warped_fungus") {
-                    world.playSound("dig.grass", block.location);
+                    player.dimension.playSound("dig.grass", block.location);
                     dimension.setBlockType(topLocation, "nethersdelight:warped_fungus_colony");
                     ItemAPI.clear(player, player.selectedSlotIndex);
                 }
@@ -50,16 +50,14 @@ class RichSoulSoilComponent {
         catch (error) {
         }
     }
-}
-export class RichSoulSoilComponentRegister {
     register(args) {
         args.blockComponentRegistry.registerCustomComponent('nethersdelight:rich_soil', new RichSoulSoilComponent());
     }
 }
 __decorate([
-    EventAPI.register(world.beforeEvents.worldInitialize),
+    EventAPI.register(system.beforeEvents.startup),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [WorldInitializeBeforeEvent]),
+    __metadata("design:paramtypes", [StartupEvent]),
     __metadata("design:returntype", void 0)
-], RichSoulSoilComponentRegister.prototype, "register", null);
+], RichSoulSoilComponent.prototype, "register", null);
 //# sourceMappingURL=RichSoulSoilComponent.js.map
